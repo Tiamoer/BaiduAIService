@@ -21,7 +21,7 @@ public class AipSpeechServlet extends HttpServlet {
 
         try {
             if (method.equals("synthesis")) {
-                aipSpeechService.synthesis(req,resp);
+                aipSpeechService.synthesis(req, resp);
             }
         }catch (Exception e) {
             e.printStackTrace();
@@ -31,6 +31,16 @@ public class AipSpeechServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
+        String method = req.getParameter("method");
+
+        try {
+            if (method.equals("asr")) {
+                aipSpeechService.asr(req, resp);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

@@ -4,8 +4,10 @@ import com.baidu.aip.speech.TtsResponse;
 import com.baidu.singleton.AipSpeechSingleton;
 import com.baidu.singleton.SingletonFactory;
 import com.baidu.utils.Base64Util;
+import com.baidu.utils.FileUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -49,6 +51,24 @@ public class AipSpeechService {
 
         PrintWriter pw = resp.getWriter();
         pw.write(dataStr);
+        pw.flush();
+
+    }
+
+    public void asr(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+
+        //1.取得数据
+        byte[] audioByteArray = FileUtil.getFileAsByteArray(req);
+
+        //2.运算
+        JSONObject jsonObject = aipSpeechSingleton.asr(audioByteArray, "wav", 16000 , null);
+
+        //3.送往
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("Application/json");
+
+        PrintWriter pw = resp.getWriter();
+        pw.write(jsonObject.toString());
         pw.flush();
 
     }
