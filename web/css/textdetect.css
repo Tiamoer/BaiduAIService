@@ -1,0 +1,151 @@
+/* 设置编码格式 */
+@charset "utf-8";
+
+/* 样式重叠表: 可以追加多个表,属性可覆盖,可叠加 */
+
+/* CSS样式: 标签选择器,精确查询标签,追加样式 */
+/* 选择器: 6种 */
+/* 1.标签名称: tagName{} 所有 */
+/* 2.class属性选择: .className{} 所有 */
+/* 3.id属性选择: #id{} 唯一 */
+/* 4.复合选择: tagName,.className{} 多标签 */
+/* 4.复合选择: tagName .className{} 父子 */
+/* 5.子标签选择 */
+/* 6.属性选择 */
+
+/* *:all 所有 */
+* {
+	/* 初始化属性 */
+	/* margin 外部边距,本身边距离其他元素的间距 */
+	/* padding 内部边距,本身边距离内部元素的间距 */
+	margin: 0px;
+	padding: 0px;
+	/* 文字:字体 */
+	font-family: "microsoft yahei";
+	/* 文字:粗细 */
+	font-weight: 400;
+	/* 文字:大小 */
+	font-size: 12px;
+	/* 文字:颜色 */
+	color: #000;
+	/* 文字阴影 1.x 2.y 3.虚实 4.颜色 */
+	text-shadow: 0px 0px 1px #999;
+}
+
+html,
+body{
+	/* %: 继承于父标签 */
+	width: 100%;
+	height: 100%;
+}
+
+.box{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: none;
+	/* 限制内部元素的宽度/高度 */
+	/* 防止内容益处 */
+	box-sizing: border-box;
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	background: black;
+	font-size: 40px;
+	font-weight: 900;
+	color: #fff;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	background: gainsboro;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.show_img {
+	padding: 20px;
+	flex: 4;
+	box-sizing: border-box;
+	font-size: 30px;
+	background: url(../img/上传图片_l.png) no-repeat center center;
+}
+
+.img_file {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	background: royalblue;
+	color: white;
+	font-size: 30px;
+	font-weight: 700;
+	/* 内容溢出: 隐藏 */
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+
+.file{
+	position: absolute;
+	top: 0;
+	right: 0;
+	/* 放大input */
+	font-size: 120px;
+	/* 光标: pointer 手指*/
+	cursor: pointer;
+	/* 透明度 */
+	opacity: 0;
+}
+
+#submit {
+	flex: 0.3;
+	font-size: 30px;
+	background: royalblue;
+	color: white;
+	border-radius: 50px;
+	margin: 30px;
+	outline: none;
+}
+
+.results {
+	margin-top: 40px;
+	flex: 3;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.results p{
+	font-size: 50px;
+}
+
+.results div{
+	display: flex;
+	padding: 30px;
+	margin-top: 50px;
+	border: 1px solid #777;
+}
+
+.results div span{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+}
+
+.results div p{
+	flex: 4;
+	display: flex;
+	align-items: center;
+	font-size: 40px;
+	color: royalblue;
+}

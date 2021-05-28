@@ -1,0 +1,91 @@
+<!-- ctrl+/ 注释 -->
+<!-- ctrl+s 保存 -->
+<!-- ctrl+x 剪切 -->
+<!-- ctrl+d 删除 -->
+<!-- alt+/ 自动提示代码块，补全代码块 -->
+
+<!-- H5大前端 -->
+<!-- 传统：PC浏览器可看、可以交互网页应用 -->
+<!-- 网页：html标签、css样式、js脚本 -->
+<!-- html：网页的内容展示 -->
+<!-- 语法：<关键字/>|<关键字>内容</关键字> -->
+<!-- 标签种类：
+	 1.块元素：显示一整行 
+	 2.行内元素：可以同行显示-->
+<!-- 标签种类：
+	 1.容器标签：div(块)、span(行内)
+	 2.显示标签：p、h～、img、audio、video
+	 3.表单：form、input、textarea、checkbox...
+	 4.按钮：button
+	-->
+
+<!-- DOCTYPE 文档类型 html -->
+<!DOCTYPE html>
+<!-- html标签：最大，约束 -->
+<html>
+	<!-- head 头部 -->
+	<!-- 网页的基本信息 -->
+	<head>
+		<!-- charset 设置编码格式 -->
+		<meta charset="utf-8" />
+		<!-- title 网页名称 -->
+		<title>百度AI-情感倾向分析</title>
+
+		<!-- 1.创建外部css文件 -->
+		<!-- 2.在head标签内部使用link导入外部样式 -->
+		<!-- 3.href 可以通过url、相对、绝对地址访问 -->
+		<link rel="stylesheet" type="text/css" href="css/sentimentClassify.css" />
+	
+		<!-- Jquery脚本框架：轻量级，完美嵌入原生js -->
+		<!-- 导包 -->
+		<script src="js/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sentimentClassify.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<!-- body 身体 -->
+	<!-- 可视化区域、功能区域、主体 -->
+	<body>
+
+		<!-- class（重复） 标签属性：功能作用  -->
+		<!-- id（唯一）可以用于查询  -->
+		<div class="box" id="box">
+			<!-- 标题 -->
+			<h1>功能-情感倾向分析</h1>
+			<!-- 输入区域 -->
+			<!-- 运行 ctrl+r -->
+			<div class="input">
+				<!-- textarea 多行输入框 -->
+				<!-- 设置长度 maxlength -->
+				<!-- 占位符 maxlength 显示默认文字（提示） -->
+				<!-- 行内样式 style  -->
+				<!-- resize: none; 取消用户控制输入框的大小 -->
+				<textarea class="text" id="text" placeholder="输入...." maxlength="300" style="resize: none;"></textarea>
+
+				<p class="hint">
+					还可以输入
+					<span class="length" id="length">300</span>
+					字
+				</p>
+			</div>
+			
+			<!-- 分析结果 -->
+			<div class="results">
+				<p>识别结果</p>
+				<div>
+					<span>情感倾向分析结果</span><p id="sentiment"></p>
+				</div>
+				<div>
+					<span>置信度</span><p id="confidence"></p>
+				</div>
+				<div>
+					<span>积极类别的概率</span><p id="positive_prob"></p>
+				</div>
+				<div>
+					<span>消极类别的概率</span><p id="negative_prob"></p>
+				</div>
+			</div>
+			<!-- 按钮 -->
+			<button id="submit" type="button">开始分析</button>
+		</div>
+
+	</body>
+</html>

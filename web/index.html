@@ -1,0 +1,103 @@
+
+<!-- ctrl+/ 注释 -->
+<!-- ctrl+s 保存 -->
+<!-- ctrl+x 剪切 -->
+<!-- ctrl+d 删除 -->
+<!-- alt+/ 自动补全 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BaiduAIService</title>
+
+    <!--  外部样式引入  -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!--  外部脚本引入  -->
+    <script type="text/javascript" charset="utf-8" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+
+</head>
+<body>
+
+    <!--  最大标签容器: 弹性盒子，解决移动端适配问题，可以响应不同分辨率的设备 -->
+    <div class="box">
+
+        <!--  head 标题导航  -->
+        <div class="head">
+            <p>BaiduAIService</p>
+        </div>
+
+        <!--  swiper 固定橱窗  -->
+<!--        <div class="swiper">-->
+<!--            <img src="img/swiper.PNG" />-->
+<!--        </div>-->
+
+        <!--  nav 标签导航  -->
+        <nav class="nav">
+            <!-- 需要通过点击控制下方View视图的显示和隐藏 -->
+            <!-- 需要关联标示：同步显示 -->
+            <!-- data-自定义属性cont=value 标签导航的唯一标识，用于切换视图的条件 -->
+            <!-- active 自定义样式：区别选择和未选择标签 -->
+
+            <!-- JS:需要完成激活状态的切换，视图同步切换 -->
+            <p data-cont="orc_nav" class="active">图像技术</p>
+            <p data-cont="face_nav">人脸与人体检测</p>
+            <p data-cont="speech_nav">语音技术</p>
+            <p data-cont="nlp_nav">自然语言</p>
+        </nav>
+
+        <!--  nav-view 标签导航视图  -->
+        <div class="nav-view">
+            <!--  section 视图区域 id绑定data-cont  -->
+            <section class="cont" id="orc_nav">
+                <p>文字识别</p>
+                <div>
+                    <a class="text" href="textdetect.html">通用文字识别</a>
+                    <a class="idcard" href="idcard.html">身份证识别</a>
+                </div>
+                <p>图像识别</p>
+                <div>
+                    <a class="body" href="objectReco.html">通用物体识别</a>
+                    <a class="animal" href="animalDetect.html">动物识别</a>
+                </div>
+                <p>图像增强技术</p>
+                <div>
+                    <a class="animation" href="selfieanime.html">人物动漫化</a>
+                    <a class="blackwhite" href="blackwhite.html">黑白上色</a>
+                </div>
+                <div>
+                    <a class="styleTrans" href="styleTrans.html">风格转换</a>
+                </div>
+
+            </section>
+            <section class="cont" id="face_nav">
+                <p>人脸识别</p>
+                <div>
+                    <a class="face_detect" href="facedetection.html">人脸检测</a>
+                    <a class="face_match" href="#">人脸对比</a>
+                </div>
+            </section>
+            <section class="cont" id="speech_nav">
+                <p>语音技术</p>
+                <div>
+                    <a class="speech_synthesis" href="synthesis.html">语音合成</a>
+                    <a class="" href="#">语音识别</a>
+                </div>
+            </section>
+            <section class="cont" id="nlp_nav">
+                <p>自然语言</p>
+                <div>
+                    <a class="nlp_lexer" href="sentimentClassify.html">情感分析</a>
+                    <a class="nlp_address" href="address.html">地址识别</a>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* 编码设置 */
+@charset "utf-8";
+
+/* 选择器：可以选择当前文档内的标签，追加样式属性 */
+/* 1.tag选择 */
+/* 2.class选择 */
+/* 3.id选择 */
+/* 4.属性选择 */
+
+* {
+    /* 初始化 */
+    /* margin 外边 padding 内边 */
+    margin: 0px;
+    padding: 0px;
+    /* font-family 字体 */
+    font-family: "microsoft yahei";
+    /*font-weight 字体粗细 */
+    font-weight: 400;
+    font-size: 12px;
+    color: black;
+    /* text-shadow 文字阴影 1 x 2 y 3 r半径 4 颜色 */
+    text-shadow: 0px 0px 1px #999;
+}
+
+html,body{
+    /* 适配访问设备的最大宽高 */
+    width: 100%;
+    height: 100%;
+}
+
+.box{
+    /* 弹性盒子 display: flex */
+    display: flex;
+    /* 弹性盒子内部排列方向：x轴（默认主轴）y轴（侧轴） */
+    /* 主轴设置 flex-direction row 行（x）column 列（y）  */
+    flex-direction: column;
+    /* 主轴排列方式 */
+    /*justify-content: center;*/
+    /* 侧轴排列方式 */
+    /*align-items: center;*/
+}
+
+.head{
+    height: 100px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head p {
+    color: #fff;
+    font-size: 40px;
+}
+
+.swiper img{
+    width: 100%;
+    height: 380px;
+    background: ghostwhite;
+}
+
+.nav{
+    display: flex;
+    /* space-around 左右空间，中间间距平分 */
+    /* space-between 左右无空间，中间间距平分 */
+    justify-content: space-between;
+    padding:0px 25px;
+    align-items: center;
+    height: 80px;
+    /* border-bottom 底部边框 1 宽度 2 样式 solid 实体 3 颜色  */
+    border-bottom: 2px solid gainsboro;
+}
+
+.nav p{
+    color: #777;
+    font-size: 30px;
+}
+
+/* 激活标签的样式 */
+.nav p.active{
+    color: royalblue;
+}
+
+.nav-view{
+    display: flex;
+    flex-direction: column;
+}
+
+.cont{
+    padding: 25px;
+    /* 隐藏元素 */
+    display: none;
+    /* 内容益处，隐藏处理 */
+    overflow: hidden;
+}
+
+.cont p {
+    color: black;
+    font-size: 30px;
+}
+
+.cont div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cont a{
+    /* 平分：用于弹性盒子子元素，可以根据指定的值分配弹性盒子的空间 */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    padding: 40px 0px;
+    font-size: 28px;
+    color: #555;
+    /* 文字装饰：取消 */
+    text-decoration: none;
+    border: 1px solid #999;
+}
+
+/* 通过选择所有div下方的第一个a标签，增加右外边距 */
+/* 子标签选择器：nth-child(index) */
+.cont div a:nth-child(1){
+    margin-right: 30px;
+}
+
+
+/* 设置icon图标 */
+.text{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/文字识别OCR.png") no-repeat 50px center;
+    background-size: 15%;
+}
+
+.idcard{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/驾驶员身份识别.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.face_detect{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/人脸核身.png") no-repeat 50px center;
+    background-size: 15%;
+}
+
+.face_match{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/人脸识别验证.png") no-repeat 50px center;
+    background-size: 15%;
+}
+
+.speech_synthesis{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/语音合成.png") no-repeat 50px center;
+    background-size: 16%;
+}
+
+.nlp_lexer{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/情感分析.png") no-repeat 50px center;
+    background-size: 16%;
+}
+
+.nlp_address{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/地址.png") no-repeat 50px center;
+    background-size: 16%;
+}
+
+.animation{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/动漫.png") no-repeat 50px center;
+    background-size: 16%;
+}

@@ -1,0 +1,100 @@
+<!-- ctrl+/ 注释 -->
+<!-- ctrl+s 保存 -->
+<!-- ctrl+x 剪切 -->
+<!-- ctrl+d 删除 -->
+<!-- alt+/ 自动提示代码块，补全代码块 -->
+
+<!-- H5大前端 -->
+<!-- 传统：PC浏览器可看、可以交互网页应用 -->
+<!-- 网页：html标签、css样式、js脚本 -->
+<!-- html：网页的内容展示 -->
+<!-- 语法：<关键字/>|<关键字>内容</关键字> -->
+<!-- 标签种类：
+	 1.块元素：显示一整行 
+	 2.行内元素：可以同行显示-->
+<!-- 标签种类：
+	 1.容器标签：div(块)、span(行内)
+	 2.显示标签：p、h～、img、audio、video
+	 3.表单：form、input、textarea、checkbox...
+	 4.按钮：button
+	-->
+
+<!-- DOCTYPE 文档类型 html -->
+<!DOCTYPE html>
+<!-- html标签：最大，约束 -->
+<html>
+	<!-- head 头部 -->
+	<!-- 网页的基本信息 -->
+	<head>
+		<!-- charset 设置编码格式 -->
+		<meta charset="utf-8" />
+		<!-- title 网页名称 -->
+		<title>百度AI-通用文字识别</title>
+
+		<!-- 1.创建外部css文件 -->
+		<!-- 2.在head标签内部使用link导入外部样式 -->
+		<!-- 3.href 可以通过url、相对、绝对地址访问 -->
+		<link rel="stylesheet" type="text/css" href="css/idcard.css" />
+	
+		<!-- Jquery脚本框架：轻量级，完美嵌入原生js -->
+		<!-- 导包 -->
+		<script src="js/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/idcard.js" type="text/javascript" charset="utf-8"></script>
+	
+	</head>
+	<!-- body 身体 -->
+	<!-- 可视化区域、功能区域、主体 -->
+	<body>
+
+		<!-- class（重复） 标签属性：功能作用  -->
+		<!-- id（唯一）可以用于查询  -->
+		<div class="box" id="box">
+			<!-- 标题 -->
+			<h1>功能-通用文字识别</h1>
+			<!-- 输入区域 -->
+			<!-- 运行 ctrl+r -->
+			<div class="input">
+				<!-- 同步显示 -->
+				<img src="#" alt="" id="show_img" class="show_img" >
+				
+				<a id="img_file" class="img_file">
+					<!-- file上传 -->
+					<!-- enctype 提交类型 multipart/form-data 多文件提交 -->
+					<form id="uploadForm" method="POST" enctype="multipart/form-data">
+						<!-- type="file" 文件提交输入：临时缓存 -->
+						<!-- name="file" 服务器获取的标示 -->
+						<input type="file" name="file" id="file" class="file" />
+					</form>
+					本地上传图片
+				</a>
+			</div>
+			
+			<!-- 分析结果 -->
+			<div class="results">
+				<p>识别结果</p>
+				<div>
+					<span>地址</span><p id="home"></p>
+				</div>
+				<div>
+					<span>公民身份号码</span><p id="id"></p>
+				</div>
+				<div>
+					<span>出生</span><p id="birth"></p>
+				</div>
+				<div>
+					<span>姓名</span><p id="name"></p>
+				</div>
+				<div>
+					<span>性别</span><p id="sex"></p>
+				</div>
+				<div>
+					<span>民族</span><p id="nation"></p>
+				</div>
+			</div>
+			
+			<!-- 按钮 -->
+			<button id="submit" type="button">开始分析</button>
+		</div>
+
+	</body>
+</html>
